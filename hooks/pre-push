@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Leer las referencias que se están pusheando
+while read local_ref local_sha remote_ref remote_sha; do
+    # Extraer el nombre completo de la rama
+    branch_name=$(echo "$remote_ref" | sed 's|refs/heads/||')
+
+    # Verificar si el nombre de la rama empieza con los prefijos permitidos
+    if [[ "$branch_name" != feature/* && "$branch_name" != hotfix/* && "$branch_name" != dev ]]; then
+        echo "Error: Solo puedes hacer push a ramas que comiencen con 'feature/', 'hotfix/' o a la rama 'dev'."
+        exit 1
+    fi
+done
+
+exit 0
+

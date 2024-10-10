@@ -27,13 +27,9 @@ def main():
         Ejemplo ✅: 123 feat: Agregar nueva funcionalidad
         El commit actual es: {title}
         ''')
-        # print("Error ❌ El mensaje de commit debe seguir el formato:")
-        # print(f"<# Historia_usuario> <tipo:{commit}>: <título>")
-        # print("Ejemplo: 123 feat: Agregar nueva funcionalidad")
-        # print(f"\nEl commit actual es: {title}")
         sys.exit(1)
 
-    print("El mensaje de commit cumple con el formato.")
+    print("El mensaje de commit cumple con el formato ✅.")
 
 if __name__ == '__main__':
     main()
